@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+echo "Change default python version into python2 or python3"
+echo "2 --------> python2"
+echo "3 --------> python3"
+read number
+if [ $number -eq 2 ]; then
+    $(sudo cp /usr/bin/python2 /usr/bin/python)
+elif [ $number -eq 3 ]; then
+    $(sudo cp /usr/bin/python3 /usr/bin/python)
+else
+    echo "Invalid input"
+fi
+echo "Your default python version is - "
+pyversion="python --version"
+eval $pyversion
